@@ -1,9 +1,47 @@
 # Issue Tracker for GL and web controller.
 
 # Version history:
-* 4.0.8 | 3.5.3 | 2026.0519.1 | 05/19/2026
+
+* *IN PROCESS* 2026.0828.3 | GUI:4.1.0 | API:3.6.0 | PLC:2026.0828.2 | 8/28/2026
+  * ALL: Add a time based version numbering to fix ambigious multi project mess we had until now.
+  * ALL: Add apprise notification method.
+  * ALL: Add compatibility mode for RS232 communiation mode on the P300 vs GL (just use p300 mode).
+  * ALL: Add back trace feature for T-Series
+  * ALL: Add RS10 refirgerant support.
+  * OS:  Migragte from Debian 11 to Debian 13
+  * OS:  Move from xserver to wayland.
+  * OS:  Fix handling of eth1.
+  * API: Switch default email provider to use apprise with an espec account (o365 disabled smpt).
+  * API: Migrate from Python 3.9 to 3.13
+  * API: Migrate from pip/venv to uv.
+  * API: Fix several logging issues.
+  * API: Fixes for task queue shutdown handling (speeds up restarts).
+  * API: Move 
+  * API: SSE Fixes: frontend-settings deletes not working
+  * API: Macro fixes, redis thread handling, period triggers, fix delay trigger.
+  * API: Update hmtl report output plot tool, much easier to use.
+  * GUI: Add support for all legacy controllers supported by API.
+  * GUI: Add HASS screen for simple control/monitor/plot all on a single page.
+  * GUI: Add top bar display mode which matches V3 gui.
+  * GUI: Improved plot controls: ctrl+click plot area to perform measurements.
+  * GUI: Improved plot controls: ctrl+click a legend item to isolate it.
+  * GUI: Add a very early loading screen to display something ASAP on slow connections/HMI.
+  * GUI: Add notification for server restarts.
+  * GUI: Show program slots as busy when they are being altered (copy, move, delete, rename).
+  * GUI: Rework loading screen to detail better detail where we may get stuck at.
+  * GUI: Add humidity chart feature to constant and program screens.
+  * GUI: on alarm, instead of re-directing to a the alarm page, display a very large modal (don't interrupt users current workflow).
+  * GUI: Port macro editor from V3 GUI.
+  * GUI: Port Network screen from V3 GUI.
+  * GUI: On HMI add swipe back navigation.
+  * GUI: General i18n fixes.
+  * GUI: Fixes for mobile page views.
+  * GUI: Performance improvements on active alarm list on chamber with huge alarm history.
+  * GUI: Improve logging to help find issues quickly.
+  * GUI: Refractor for mutliple "apps".
+* GUI:4.0.8 | API:3.5.3 | PLC:2026.0519.1 | 05/19/2026
   * API: Fix json exports not actually containing any json.
-* 4.0.8 | 3.5.2 | 2026.0507.1 | 05/07/2026
+* GUI:4.0.8 | API:3.5.2 | PLC:2026.0507.1 | 05/07/2026
   * PLC: Update to superheat control algorithm.
   * PLC: Fix rSelectSmooth algorithm to transition smoothly between values correctly (not really used).
   * PLC: Change Thermistor input to use an actively measured reference voltage.
@@ -13,11 +51,11 @@
   * API: Update default GL EP RefrigHighStage default superheat pids.
   * API: Adjust default CM201 discharge alarm temp to 120 (110 is to low).
   * API: Fix GN2 option not populating the correct time signal.
-* 4.0.8 | 3.5.1 | 2026.0429.1 | 04/29/2026
+* GUI:4.0.8 | API:3.5.1 | PLC:2026.0429.1 | 04/29/2026
   * GUI/API: Adds support for keyprotect command/feature.
   * GUI: Updates for language files.
   * PLC: Fix EP LN2 handling when superheat takes effect.
-* 4.0.7 | 3.5.0 | 2026.0414.3 | 04/14/26
+* GUI:4.0.7 | API:3.5.0 | PLC:2026.0414.3 | 04/14/26
   * ALL: Add settings for when cascade refrigeration system is run in energy saver (APP.setup.rRefrigCascadeBelowSP, APP.setup.rRefrigCascadeBelowPV).
   * ALL: Unlink external/internal steam generator control logic from refrigeration base algorithm, uses xHumiSteamGenExternal now.
   * ALL: Allows saving of custom performance specs.
@@ -39,15 +77,15 @@
   * PLC: Correct a edge case where low stage compressor could be on while high stage compressor is off.
   * PLC: Correct EP Pressure reset control order of operations.
   * PLC: Correct handling of coupled high/low pressure switches on EGN chambers.
-* 4.0.6 | 3.4.6 | 2026.0116.2 | 01/16/26
+* GUI:4.0.6 | API:3.4.6 | PLC:2026.0116.2 | 01/16/26
   * API: Update default settings for EPL-4J
   * API: Change codesys licensing Alarm to warning as it does not stop chamber operation immediately.
   * PLC: Fix low humidity option on platinous, previous update broke it.
   *  PLC: Fix WB/DB initial fill being cut shorter than intended.
-* 4.0.5 | 3.4.5 | 2026.0112.3 | 01/12/26
+* GUI:4.0.5 | API:3.4.5 | PLC:2026.0112.3 | 01/12/26
   * API: Fix humidity water supply alarm to warning as it does not stop the chamber.
   * PLC: Fix humidity water supply alarm handling to ensure steam heater is not enabled if there is no water in the duck pond on platinous chambers.
-* 4.0.4 | 3.4.4 | 2025.1222.2 | 12/22/25 (NOT SHIPPED)
+* GUI:4.0.4 | API:3.4.4 | PLC:2025.1222.2 | 12/22/25 (NOT SHIPPED)
   * API: Add a proper polling fallback system for /sse endpoint.
   * API: Add more channels to /sse endpoint for front end performance enhancements.
   * API: Fix automatic backtrace handling. Multiple report generation was possible, one per task worker.
@@ -63,7 +101,7 @@
   * GUI: Performance enhancements by implementing virtual scrolling on more elements with large lists.
   * GUI: Snap scrolling is on virtual scroll elements has been re-worked. Previous method fought with virtual elements as the browser cannot snap to elements that do not exist while scrolling.
   * GUI: Fix missing error messages when api requests fail.
-* 4.0.3 | 3.4.3 | ??? | 11/14/25
+* GUI:4.0.3 | API:3.4.3 | ??? | 11/14/25
   * GUI: Fix custom grid rendering on mobile (home/mon2/mon3).
   * GUI: Implement chrome warning suggestions (Invalid icon, form helpers, etc).
   * GUI: Add trace searching to log viewer.
@@ -78,17 +116,17 @@
   * API: Updates to SSE handling for new RCF6902 format. Adds more available channels/parts. SSE API is not considered stable and may change.
   * API: GL Model Settings Updates.
   * PLC: Fix for EGNX superheat control during humidity mode.
-* 4.0.2 | 3.4.2 | ??? | 11/6/25
+* GUI:4.0.2 | API:3.4.2 | ??? | 11/6/25
   * GUI: Fix possible race condition hen opening program editor. Existed before 4.0.1 but performance enhancements w/4.0.1 highlighted issue.
   * GUI: Add details to service pages.
   * GUI: Performance enhancements; Re-work pages composable to use pinia due to race condition on startup.
   * API: Fix update procedure w/ setting and/or config file changes.
-* 4.0.1 | 3.4.1 | ??? | 11/5/25
+* GUI:4.0.1 | API:3.4.1 | ??? | 11/5/25
   * GUI: Update default backtrace log views.
   * GUI: Performance enhancements, specifically targeting initial render times.
   * API: GL Model Setting Updates.
   * API: Task engine now cleans up Redis before starting. Prevents build up of tasks leading to system unresponsiveness.
   * PLC: Fix window heat.
   * PLC: Fix analog input range alarms tripping when in error state, Burn out detect handles error state seperately
-* 4.0.0 | 3.4.0 | ??? | 10/31/25
+* GUI:4.0.0 | API:3.4.0 | ??? | 10/31/25
   * Initial release
