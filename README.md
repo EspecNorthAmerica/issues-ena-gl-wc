@@ -2,7 +2,10 @@
 
 # Version history:
 
-* 2026.0831.5 | GUI:4.1.0 | API:3.6.0 | PLC:2026.0828.2 | 8/31/2026
+* 2026.0903.4 | GUI:4.1.1 | API:3.6.1 | PLC:2026.0713.1 | 9/3/2026
+  * ALL: Several fixes to improve factory startup proceedure.
+  * PLC: Fix the reported PLC version to show its actual version and not a copy of the system version.
+* 2026.0831.5 | GUI:4.1.0 | API:3.6.0 | PLC:2026.0713.1 | 8/31/2026
   * ALL: Add a time based version numbering to fix ambigious multi project mess we had until now.
   * ALL: Add apprise notification method.
   * ALL: Add compatibility mode for RS232 communiation mode on the P300 vs GL (just use p300 mode).
