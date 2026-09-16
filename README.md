@@ -2,7 +2,9 @@
 
 # Version history:
 
-* 2026.0915.0 | GUI:4.1.1 | API:3.6.1 | PLC:2026.0713.1 | 9/5/2026
+* 2026.0916.0 | GUI:4.1.1 | API:3.6.2 | PLC:2026.0713.1 | 9/16/2026
+  * OS: Fix issue port forwarding native TCP communication protocols directly to chamber controller, ex: ModbusTCP.
+* 2026.0915.0 | GUI:4.1.1 | API:3.6.1 | PLC:2026.0713.1 | 9/15/2026
   * OS: Fix missing mender identity script from differences in debian 11 and 13 mender-client.deb.
     Without this fix the OTA updates will not work, standalone uploads will work as is.
 * 2026.0903.4 | GUI:4.1.1 | API:3.6.1 | PLC:2026.0713.1 | 9/3/2026
