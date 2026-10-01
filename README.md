@@ -2,6 +2,27 @@
 
 # Version history:
 
+* 2026.1001.1 | GUI:4.1.3 | API:3.6.3 | PLC:2026.1001.0 | 10/01/2026
+  * API: GL: COMS: Apply whitespace removal to all arguments of the commands.
+  * API: GL: COMS: Fix temp/humi/vib write commands without spaces.
+  * API: GL: COMS: Timer write, fix error invalid error setting last step of a program.
+  * API: GL: COMS: fix prgm use? not accepting "ROM" or "RAM" arguments when not selecting a program number.
+  * API: T-Series: Fix handling of programs ids that include a "." period, they where inexessible previously.
+  * API: Performance, and size limit updates from system log database (limit queue size, batch inserts), previously this could crash the system due to queue size.
+  * API: Legacy chamber models /programs reponse format was changed, reverting to 3.3. format adding query param "programs-detailed" (boolean) to enable new format. SSE will always use new format, SSE has no api guarentees.
+  * GUI: P300: COMS: Add missing configuration parameters for prefix and error_response.
+  * GUI: T-Series: Fix how front end handles the new numeric ids, remove multiple id gaps, and ensure next available numeric id is used correctly.
+  * GUI: Devex, add app:build:upload command npm command for updating hmi app.
+  * GUI: Merge GL and 3.3 updates so latest version is used in all cases (Many features on GL not supported, must current gui).
+  * GUI: Fixes for factory registration.
+  * GUI: Add hidden debug tools for backend failure to hmi application.
+  * GUI: Fix race condtions causing some pages to be disabled.
+  * GUI: Add macro options to to the custom grid for home/mon2/mon3 pages.
+  * PLC: Add new option for LN2 only cooling system.
+  * PLC: Add min/max heat/cool output scalars/limiters.
+  * ALL: GL: Add no-refrig to refrig mode to disable visibility of invalid data on ln2 only chambers.
+  * ALL: GL: Add special topic for plc setting changes, add special ui to view these.
+  * ALL: GL: Add support for multiple solid state sensor types, specifically a dew point sensor.
 * 2026.0916.0 | GUI:4.1.2 | API:3.6.2 | PLC:2026.0713.1 | 9/16/2026
   * OS: Fix issue port forwarding native TCP communication protocols directly to chamber controller, ex: ModbusTCP.
 * 2026.0915.0 | GUI:4.1.2 | API:3.6.1 | PLC:2026.0713.1 | 9/15/2026
