@@ -398,14 +398,4 @@ These English labels are available to the frontend but have no numeric trigger i
 | -836A | WAR | REF2 BRD-3 SNSR OUT RANGE WARN (DC2) |
 | -836B | WAR | REF2 BRD-3 SNSR OUT RANGE WARN (DC3) |
 
-## Sources
-
-- [Alarm configuration and analog/PID mappings](conf_templates/parents/ena_gl_primary.yaml.j2), `conditions.active_alarms` and initialization overrides.
-- [Alarm decoding](especapi/chamber/controllers/espec/ena_gl/alarms.py), `Alarms`.
-- [Digital alarm lookup and suppression conversion](especapi/chamber/controllers/espec/ena_gl/database.py), `digital_alarm_codes` and `to_plc_dict`.
-- [ENA GL application settings](conf_templates/application_settings/ENA_GL/), including `base.yaml`, model-specific `DigInAlarms`, and `AnalogInputConfig`.
-- [English frontend alarm descriptions](/home/mmetzler/projects/ew-fe-gl/src/locales/en/__glAlarmCodes.yaml).
-- [Frontend alarm code formatting](/home/mmetzler/projects/ew-fe-gl/src/composables/useAlarmDecoder.ts).
-- [Boot suppression default](especapi/config.py), `GL_NUISANCE_SUPPRESS_TIME`.
-
 Companion data: [ENA_GL_ALARM_MAPPING.csv](ENA_GL_ALARM_MAPPING.csv).
