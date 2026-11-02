@@ -2,6 +2,9 @@
 
 # Version history:
 
+* 2026.1008.0 | GUI:4.1.4 | API:3.6.3 | PLC:2026.1008.0 | 10/08/2026
+  * All: Adds Expo setting for PID loop Power
+  * PLC: Fix refrig pack control humidity loop mapping.
 * 2026.1001.1 | GUI:4.1.3 | API:3.6.3 | PLC:2026.1001.0 | 10/01/2026
   * API: GL: COMS: Apply whitespace removal to all arguments of the commands.
   * API: GL: COMS: Fix temp/humi/vib write commands without spaces.
