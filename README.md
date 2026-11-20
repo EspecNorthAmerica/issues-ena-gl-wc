@@ -2,6 +2,40 @@
 
 # Version history:
 
+* 2026.1120.1 | GUI:4.2.0 | API:3.6.5 | PLC:2026.1029.0 | 11/20/2026 (Web Controller build)<br/>
+  2026.1120.2 | GUI:4.2.0 | API:3.6.5 | PLC:2026.1029.0 | 11/20/2026 (GL  Controller build)
+  * OS: Update NGINX to 1.26.3-3+deb13u11, Fixes:
+    * CVE-2026-113425 CVE-2026-118899 CVE-2026-120967 CVE-2026-121810 CVE-2026-123007 CVE-2026-123633 CVE-2026-123634 CVE-2026-123640 CVE-2026-125283
+  * OS: Switch to using custom config for Linux kernel 6.18.x. Based on Debian's config with un-used modules removed, and enabled AAEON UP2 driver for embedded GPIO.
+  * OS: Fully removes disabled components in production builds (example ssh, was disabled before this version, no it is not installed)
+  * OS: Remove pulseaudio, (GUI now uses simpler tone generation) 
+  * PLC: Fixes for progress warning for ramps, split into seperate warning codes  (3030, 3031).
+  * API: Add seperate PID loop control progress warning code support (3030, 3031).
+  * GUI: Alternative touch screen support added:
+    * Add support for a buzzer connected to UP2 embedded GPIO PWM.
+    * Add support for backlight power control via UP2 embdded GPIO.
+    * Add support for backlight intensity control via UP2 embedded GPIO PWM.
+    * Exesting touch screen backlight control and speaker alarm generation still available.
+    * Select scheme via detected display model.
+  * GUI: Fix different parsing output on logged data being streamed vs loaded when zoom/pan is used. Alarm names did not decode correctly on streamed data.
+  * GUI: Fix log data streams "eating" their own tail, due to difference in time between points when loading large data sets and re-activating automatic updates.
+  * GUI: Fix Various bugs related to import/export of programs as xlsx (on GL).
+  * GUI: Fix network view new chamber popup.
+  * GUI: Add seperate PID loop control progress warning code support (3030, 3031).
+  * GUI: Fix top status bar css color on alternative themes, lighter themes where hard to read due to low contrast.
+  * GUI: Fix T-Series chamber light not updating.
+  * GUI: Fixes auth edge cases where account updates and login/logout can interfere with each other.
+  * GUI: Refresh the token on user account changes (password update).
+  * GUI: Add support for more meta data on program lists (p300 lists program update time as date only).
+  * GUI: Fix an issue where the splash screen can re-direct even after the user has already navigated.
+  * GUI: Fix rare case where invalid programs show up in the program list(s).
+  * GUI: Fixes to ramp rate units on watlow programs.
+  * GUI: Information screen now supports linking to system log trace.
+  * GUI: Fix how system-logs handles data refreshing, add url encoding for linking.
+  * GUI: Adds support for general large request streaming responses, backend has not been updated for this in prod yet.
+  * GUI: plot measure tool no longer shows disabled series on the popup.
+  * OTHER: Creates offline configuration/program editor.
+
 * 2026.1008.0 | GUI:4.1.4 | API:3.6.3 | PLC:2026.1008.0 | 10/08/2026
   * All: Adds Expo setting for PID loop Power
   * PLC: Fix refrig pack control humidity loop mapping.
